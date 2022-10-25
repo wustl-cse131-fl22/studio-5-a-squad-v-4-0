@@ -16,7 +16,9 @@ public class Methods {
 	public static double distanceBetween(double x1, double y1, double x2, double y2) {
 		double distance = 0;
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
-		
+		double x= Math.abs(x2-x1);
+		double y = Math.abs(y2-y1);
+		distance = Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2));
 		return distance;
 	}
 
@@ -34,17 +36,20 @@ public class Methods {
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
-
+		StdDraw.setPenColor(StdDraw.BLUE);
+		StdDraw.filledCircle(x, y, 3.0/4.0*radius);
 		
 
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
-
+		StdDraw.setPenColor(StdDraw.RED);
+		StdDraw.filledCircle(x, y, 2.0/4.0*radius);
 		
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
-
+		StdDraw.setPenColor(StdDraw.YELLOW);
+		StdDraw.filledCircle(x, y, 1.0/4.0*radius);
 		
 	}
 
@@ -63,6 +68,17 @@ public class Methods {
 		String result = "";
 		// TODO: Finish this method
 		
+		for (int i=0; i<source.length(); i++)
+		{
+			if (source.charAt(i)==target)
+			{
+				result+=replacement;	
+			}
+			else
+			{
+				result+=source.charAt(i);
+			}
+		}
 		return result;
 	}
 
@@ -75,7 +91,11 @@ public class Methods {
 	public static int arraySum(int[] values) {
 		int sum = 0;
 		// FIXME: Compute the sum of the values in an array
-		
+
+		for (int i=0; i<values.length; i++)
+		{
+			sum+=values[i];
+		}
 		return sum;
 	}
 
@@ -87,9 +107,13 @@ public class Methods {
 	 * @return and array of size that's filled with value
 	 */
 	public static int[] filledArray(int length, int value) {
-		int[] values = null; // FIXME: Create an array of the appropriate size
+		int[] values = new int [length];
+		// FIXME: Create an array of the appropriate size
 		// TODO: Finish this method
-
+		for (int i=0; i<values.length; i++)
+		{
+			values[i]=value;
+		}
 		
 
 		return values;
